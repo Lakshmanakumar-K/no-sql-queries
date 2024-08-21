@@ -10,7 +10,7 @@ db.products.find({product_price : { $gte:400, $lte:800}},{product_name:1,product
 db.products.find({$or : [{product_price:{$lt:400}},{product_price:{$gt:600}}]},{product_name:1,product_price:1,_id:0}).toArray();
 
 // 4. List the four product which are greater than 500 in price
-db.products.find({product_price:{$gt:500}},{product_name:1,product_price:1,product_material:1,product_color:1,id:1,_id:0},{limit:4});
+db.products.find({product_price:{$gte:500}},{product_name:1,product_price:1,product_material:1,product_color:1,id:1,_id:0},{limit:4});
 
 // 5. Find the product name and product material of each products 
 db.products.find({},{product_name:1,product_material:1,_id:0}).toArray();
